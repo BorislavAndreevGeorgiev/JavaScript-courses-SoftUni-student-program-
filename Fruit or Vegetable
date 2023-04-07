@@ -1,0 +1,13 @@
+function frutOrVegitable(input) {
+
+    let tipe = (input[0]);
+
+    if (tipe === "banana" || tipe === "apple" || tipe === "kiwi" || tipe === "cherry" || tipe === "lemon" || tipe === "grapes") {
+        console.log("fruit");
+    } else if (tipe === "tomato" || tipe === "cucumber" || tipe === "pepper" || tipe === "carrot") {
+        console.log("vegetable");
+    } else {
+        console.log("unknown");
+    }
+
+}
