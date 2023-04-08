@@ -1,0 +1,51 @@
+function jurney(input) {
+
+    let budged = Number(input[0]);
+    let season = (input[1]);
+    let destination;
+    let vacantionPrice = 0
+    let type;
+
+    if (season === "summer") {
+
+        if (budged <= 100) {
+            destination = "Bulgaria"
+            vacantionPrice = budged * 0.30;
+            type = "Camp"
+
+        } else if (budged <= 1000 && budged > 100) {
+            destination = "Balkans";
+            vacantionPrice = budged * 0.40;
+            type = "Camp"
+
+        } else if (budged > 1000) {
+            destination = "Europe"
+            vacantionPrice = budged * 0.90
+            type = "Hotel"
+        }
+
+    } else if (season === "winter") {
+
+        if (budged <= 100) {
+            destination = "Bulgaria"
+            vacantionPrice = budged * 0.70;
+            type = "Hotel"
+
+        } else if (budged <= 1000 && budged > 100) {
+            destination = "Balkans";
+            vacantionPrice = budged * 0.80;
+            type = "Hotel";
+
+        } else if (budged > 1000) {
+            destination = "Europe"
+            vacantionPrice = budged * 0.90
+            type = "Hotel"
+        }
+
+    }
+
+    console.log(`Somewhere in ${destination}`);
+    console.log(`${type} - ${
+        vacantionPrice.toFixed(2)
+    }`);
+}
