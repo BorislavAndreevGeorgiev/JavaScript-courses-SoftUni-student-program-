@@ -1,0 +1,40 @@
+function fishingBoat(input) {
+
+    let budget = Number(input[0]);
+    let season = (input[1]);
+    let fishermanCount = Number(input[2]);
+    let shipPrice = 0;
+
+    switch (season) {
+        case "Spring": shipPrice = 3000;
+            break;
+        case "Summer": shipPrice = 4200;
+            break;
+        case "Autumn": shipPrice = 4200;
+            break;
+        case "Winter": shipPrice = 2600
+            break;
+    }
+
+    if (fishermanCount <= 6) {
+        shipPrice *= 0.9;
+    } else if (fishermanCount >= 7 && fishermanCount<= 11){
+        shipPrice *= 0.85;
+    }else if(fishermanCount >= 12) {
+        shipPrice *= 0.75
+    }
+    if (season !== "Autumn" && fishermanCount % 2 === 0) {
+        shipPrice *= 0.95;
+    }
+    let finalSum = budget - shipPrice
+
+    if (budget >= shipPrice) {
+        console.log(`Yes! You have ${
+            finalSum.toFixed(2)
+        } leva left.`);
+    } else {
+        console.log(`Not enough money! You need ${
+            Math.abs(finalSum).toFixed(2)
+        } leva.`);
+    }
+}
