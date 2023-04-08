@@ -1,0 +1,76 @@
+function hotelRoom(input) {
+
+    let period = (input[0]);
+    let days = Number(input[1]);
+    let studioPrice = 0.0;
+    let apartmentPrice = 0.0;
+
+    switch (period) {
+        case 'May': studioPrice = days * 50;
+            if (days > 7 && days <= 14) {
+                studioPrice *= 0.95;
+            } else if (days > 14) {
+                studioPrice *= 0.7
+            }
+            apartmentPrice = days * 65;
+            if (days > 14) {
+                apartmentPrice *= 0.90
+            }
+            break;
+
+        case 'October': studioPrice = days * 50;
+            if (days > 7 && days <= 14) {
+                studioPrice *= 0.95;
+            } else if (days > 14) {
+                studioPrice *= 0.7
+            }
+            apartmentPrice = days * 65;
+            if (days > 14) {
+                apartmentPrice *= 0.90
+            }
+            break;
+
+        case 'June': studioPrice = days * 75.20;
+            if (days > 14) {
+                studioPrice *= 0.80;
+            }
+            apartmentPrice = days * 68.70;
+            if (days > 14) {
+                apartmentPrice *= 0.90
+            }
+            break;
+
+        case 'September': studioPrice = days * 75.20;
+            if (days > 14) {
+                studioPrice *= 0.80;
+            }
+            apartmentPrice = days * 68.70;
+            if (days > 14) {
+                apartmentPrice *= 0.90
+            }
+            break;
+
+        case 'July': studioPrice = days * 76;
+            apartmentPrice = days * 77;
+            if (days > 14) {
+                apartmentPrice *= 0.90
+            }
+            break;
+
+        case 'August': studioPrice = days * 76;
+            apartmentPrice = days * 77;
+            if (days > 14) {
+                apartmentPrice *= 0.90
+            }
+            break;
+    }
+
+
+    console.log(`Apartment: ${
+        apartmentPrice.toFixed(2)
+    } lv.`);
+    console.log(`Studio: ${
+        studioPrice.toFixed(2)
+    } lv.`);
+
+}
