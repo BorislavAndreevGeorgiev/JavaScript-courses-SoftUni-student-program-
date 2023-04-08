@@ -1,0 +1,48 @@
+function operationBetwenNumbers(input) {
+
+    let num1 = Number(input[0]);
+    let num2 = Number(input[1]);
+    let simbol = (input[2]);
+    let type;
+    let result;
+
+
+    if (simbol === "+") {
+        result = num1 + num2;
+        if (result % 2 === 0) {
+            type = "even";
+        } else {
+            type = "odd"
+        }
+        console.log(`${num1} ${simbol} ${num2} = ${result} - ${type}`)
+    } else if (simbol === "-") {
+        result = num1 - num2
+        if (result % 2 === 0) {
+            type = "even";
+        } else {
+            type = "odd"
+        }
+        console.log(`${num1} ${simbol} ${num2} = ${result} - ${type}`)
+    } else if (simbol === "*") {
+        result = num1 * num2
+        if (result % 2 === 0) {
+            type = "even";
+        } else {
+            type = "odd"
+        }
+        console.log(`${num1} ${simbol} ${num2} = ${result} - ${type}`)
+    } else if (simbol === "/" && num2 !== 0) {
+        result = num1 / num2
+        console.log(`${num1} / ${num2} = ${
+            result.toFixed(2)
+        }`)
+    } else if (simbol === "/") {
+        console.log(`Cannot divide ${num1} by zero`)
+    } else if (simbol === "%" && num2 !== 0) {
+        result = num1 % num2;
+        console.log(`${num1} % ${num2} = ${result}`);
+    } else if (simbol === "%") {
+        console.log(`Cannot divide ${num1} by zero`)
+    }
+
+}
