@@ -1,0 +1,42 @@
+function trekkingMania(input){
+
+    let pCount = Number (input.shift());
+    let totalNum = 0;
+
+    let statistic = {
+        'Musala': 0,
+        'Monblan': 0,
+        'Kiliman': 0,
+        'K2': 0,
+        'Everest': 0,
+    }
+
+    for(let i = 0; i < pCount; i++){
+        let groupNumb = Number (input.shift());
+        let mountain = '';
+            switch(true){
+                case groupNumb <= 5 :
+                    mountain = 'Musala' ;
+                    break;
+                case groupNumb >= 6 && groupNumb <=12:
+                    mountain = 'Monblan';
+                    break;
+                case groupNumb >= 13 && groupNumb <=25:
+                    mountain = 'Kiliman';
+                    break;
+                case groupNumb >= 26 && groupNumb <= 40:
+                    mountain = 'K2';
+                    break;
+                case groupNumb >= 41 :
+                    mountain = 'Everest'
+                    break;
+                default:
+                    break;
+            }
+            totalNum += groupNumb;
+            statistic[mountain] += groupNumb
+    }
+    Object.keys(statistic).forEach(mountain =>{
+        console.log(`${(statistic[mountain] *100 / totalNum).toFixed(2)}%`)
+    })
+}
