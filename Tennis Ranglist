@@ -1,0 +1,33 @@
+function tennisRanklist(input) {
+
+    let numTurnirs = Number(input[0]);
+    let numPoints = Number(input[1]);
+    let finalTipe = (input.shift());
+    let winner = 0;
+    let final = 0;
+    let semiFinal = 0;
+    let win = 0;
+
+    for (let i = 0; i <= numTurnirs; i++) {
+        let fTipe = (input[i])
+        if (fTipe === 'W') {
+            winner += 2000;
+            win += 1
+        }
+        else if (fTipe === 'F') {
+            final += 1200;
+        }
+        else if (fTipe === 'SF') {
+            semiFinal += 720;
+        }
+    }
+
+    let finalResult = numPoints + winner + final + semiFinal;
+    let withoutsumPoints = winner + final + semiFinal;
+    let averagePoints = withoutsumPoints / numTurnirs;
+    let percent = win / numTurnirs * 100;
+    console.log(`Final points: ${finalResult}`);
+    console.log(`Average points: ${Math.floor(averagePoints)}`);
+    console.log(`${(percent).toFixed(2)}%`);
+
+}
