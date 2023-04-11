@@ -1,0 +1,21 @@
+function maxNumber (input){
+
+    let index = 0;
+    let command = input[index]
+    index++
+
+    let biggerNum = Number.MIN_SAFE_INTEGER
+
+    while (command !== "Stop"){
+        let currentNum = Number (command);
+
+            if(currentNum > biggerNum){
+                biggerNum = currentNum
+            }
+        command = input[index];
+        index++
+    }
+
+    console.log(biggerNum);
+
+}
