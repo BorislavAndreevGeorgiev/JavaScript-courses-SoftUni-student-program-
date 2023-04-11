@@ -1,0 +1,29 @@
+function oldBooks(input){
+
+let index = 0
+let correctBook = input[index];
+index++
+let checkBooks = input[index];
+index++
+let booksCount = 0;
+let foundBook = false
+
+    while(checkBooks !== "No More Books"){
+        let serchedBook = checkBooks
+        if(correctBook === serchedBook){
+            foundBook = true
+            break;
+        }
+        booksCount++
+        checkBooks = input[index];
+        index++
+    }
+
+    if(!foundBook){
+        console.log('The book you search is not here!');
+        console.log(`You checked ${booksCount} books.`);
+    }else{
+        console.log(`You checked ${booksCount} books and found it.`);
+    }
+
+}
