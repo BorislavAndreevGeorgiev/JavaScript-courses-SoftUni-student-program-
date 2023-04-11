@@ -1,0 +1,21 @@
+function minNumber(input){
+
+let index = 0;
+let num = input[index];
+index++;
+
+let calculatedSum = Number.MAX_SAFE_INTEGER
+
+    while(num !== "Stop"){
+        let sumNum = Number (num);
+
+            if(sumNum < calculatedSum){
+                calculatedSum = sumNum;
+            }
+        num = input[index];
+        index++
+    }
+
+console.log(calculatedSum);
+
+}
