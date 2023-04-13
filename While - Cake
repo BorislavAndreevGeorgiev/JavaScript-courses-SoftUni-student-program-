@@ -1,0 +1,26 @@
+function cake(input) {
+
+    let caceSideOne = Number(input.shift());
+    let caceSideTwo = Number(input.shift());
+    let fullCace = caceSideOne * caceSideTwo;
+    let total = 0
+
+    while (fullCace >= total) {
+        let current = input.shift();
+            if(current == 'STOP'){
+                break
+            }
+        let piece =  Number(current);
+        total += piece
+    }
+
+    if (total > fullCace ) {
+        let sum = total - fullCace
+        console.log(`No more cake left! You need ${sum} pieces more.`)
+
+    } else {
+        let sum = fullCace - total
+        console.log(`${sum} pieces are left.`)
+    }
+
+}
