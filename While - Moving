@@ -1,0 +1,24 @@
+function moving(input){
+
+    let spaceWidth = Number (input.shift());
+    let spaceLenght = Number (input.shift());
+    let spaceHeight = Number (input.shift());
+    let spaceSum = spaceHeight * spaceLenght * spaceWidth
+    let freeSpace = 0
+    while(spaceSum >= freeSpace){
+        let status = input.shift();
+        if(status == 'Done'){
+            break;
+        }
+        let boxes = Number (status);
+        freeSpace += boxes
+    }
+    if(freeSpace > spaceSum){
+        let finalSpace = freeSpace - spaceSum
+        console.log(`No more free space! You need ${finalSpace} Cubic meters more.`);
+
+    }else{
+        let finalSpace = spaceSum - freeSpace;
+        console.log(`${finalSpace} Cubic meters left.`);
+    }
+}
