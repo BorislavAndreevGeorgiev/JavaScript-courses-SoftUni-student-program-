@@ -1,0 +1,23 @@
+function walking(input) {
+
+    let totalSteps = 0;
+    let dailyCount = input.shift();
+
+    while (totalSteps < 10000 && dailyCount !== "Going home") {
+        let stepsCount = Number(dailyCount);
+        totalSteps += stepsCount
+        dailyCount = input.shift();
+    }
+    if (dailyCount === "Going home") {
+        let finalSteps = Number(input.shift());
+        totalSteps += finalSteps
+    }
+    if (totalSteps < 10000) {
+        let finalResult = 10000 - totalSteps;
+        console.log(`${finalResult} more steps to reach goal.`)
+    } else {
+        console.log('Goal reached! Good job!');
+        let finalResult = totalSteps - 10000;
+        console.log(`${finalResult} steps over the goal!`)
+    }
+}
