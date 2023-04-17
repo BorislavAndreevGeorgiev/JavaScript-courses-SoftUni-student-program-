@@ -1,0 +1,30 @@
+function sumOfTwoNumbers(input){
+
+ let start = Number (input[0]);
+ let end = Number (input[1]);
+ let magNum = Number (input[2]);
+ let counter = 0;
+ let firstNum = 0;
+ let secondNum = 0;
+ let isFound = false
+
+    for(let x = start; x <= end; x++){
+        for(let y = start; y <= end; y++){
+            counter++
+            if (x + y === magNum){
+                firstNum = x;
+                secondNum = y;
+                isFound = true
+                break;
+            }
+        }
+        if(isFound){
+            break;
+        }
+    }
+    if(isFound){
+        console.log(`Combination N:${counter} (${firstNum} + ${secondNum} = ${magNum})`)
+    }else{
+        console.log(`${counter} combinations - neither equals ${magNum}`)
+    }
+}
