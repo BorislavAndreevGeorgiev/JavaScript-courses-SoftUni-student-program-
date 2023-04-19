@@ -1,0 +1,17 @@
+function agencyProfit(input){
+
+    let companyName = input[0];
+    let numAdTickets = Number (input[1]);
+    let numKdTickets = Number (input[2]);
+    let priceAd = Number (input[3]);
+    let manPrice = Number (input[4]);
+
+    let totalMoney = 0;
+
+    let adCounter = priceAd + manPrice
+    let kidsPrice = (priceAd *  0.30) + manPrice
+
+    let finalPrice = (adCounter * numAdTickets) + (kidsPrice * numKdTickets)
+    let winSum = finalPrice * 0.20
+    console.log(`The profit of your agency from ${companyName} tickets is ${winSum.toFixed(2)} lv.`)
+}
