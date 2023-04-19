@@ -1,0 +1,22 @@
+function specialNumbers(input) {
+
+    let specialNum = Number(input[0]);
+    let startNum = 1111;
+    let endNum = 9999;
+    let printLine = "";
+    for (let i = startNum; i <= endNum; i++) {
+        let iToString = i.toString();
+        let isSpecial = true
+        for (let x = 0; x < iToString.length; x++) {
+            let xDigit = Number(iToString[x]);
+
+            if (specialNum % xDigit !== 0) {
+                isSpecial = false
+            }
+        }
+        if (isSpecial) {
+            printLine += i + " ";
+        }
+    }
+    console.log(printLine)
+}
