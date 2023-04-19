@@ -1,0 +1,33 @@
+function traintheTrainers(input) {
+
+    let trainers = Number(input[0]);
+    let namePresentation = input[1];
+    let index = 2;
+
+    let presentationCounter = 0;
+    let totalGrades = 0;
+
+    while (namePresentation != "Finish") {
+        presentationCounter += 1;
+        let counter = index;
+        let currGrades = 0;
+        for (let i = counter; i < counter + trainers; i++) {
+            index++;
+            currGrades += Number(input[i]);
+        }
+
+        let averageGradePerPresentation = currGrades / trainers;
+
+        console.log(`${namePresentation} - ${
+            averageGradePerPresentation.toFixed(2)
+        }.`);
+
+        totalGrades += averageGradePerPresentation;
+        namePresentation = input[index];
+        index++;
+    }
+    let totalGradesPrint = totalGrades / presentationCounter;
+    console.log(`Student's final assessment is ${
+        totalGradesPrint.toFixed(2)
+    }.`);
+}
