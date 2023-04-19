@@ -1,0 +1,13 @@
+function vegetableMarket(input){
+
+    let oneKgZ = Number (input[0]);
+    let oneKgP = Number (input[1]);
+    let totalZ = Number (input[2]);
+    let totalP = Number (input[3]);
+
+    let zCounter = oneKgZ * totalZ;
+    let pCounter = oneKgP * totalP;
+
+    let allIn = (zCounter + pCounter) / 1.94;
+    console.log(allIn.toFixed(2))
+}
