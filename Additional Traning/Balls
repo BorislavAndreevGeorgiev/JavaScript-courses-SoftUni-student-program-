@@ -1,0 +1,47 @@
+function balls(input){
+
+let num = Number (input[0])
+let index = 1
+let type = input[index]
+index++
+
+let pointsCounter = 0;
+let redCounter = 0;
+let orangeCounter = 0;
+let yellowCounter = 0;
+let whiteCounter = 0;
+let otherCounter = 0;
+let blackCounter = 0;
+
+for(i = 1; i <= num; i++){
+    switch(type){
+        case "red" : pointsCounter += 5
+        redCounter++
+        break;
+        case "orange" : pointsCounter +=10
+        orangeCounter++
+        break;
+        case "yellow" : pointsCounter +=15
+        yellowCounter++
+        break;
+        case "white": pointsCounter +=20
+        whiteCounter++
+        break;
+        case "black": pointsCounter /= 2
+        blackCounter++
+        break;
+        default : otherCounter++
+    }
+    type = input[index]
+    index++
+}
+
+console.log(`Total points: ${Math.floor(pointsCounter)}`)
+console.log(`Red balls: ${redCounter}`)
+console.log(`Orange balls: ${orangeCounter}`)
+console.log(`Yellow balls: ${yellowCounter}`)
+console.log(`White balls: ${whiteCounter}`)
+console.log(`Other colors picked: ${otherCounter}`)
+console.log(`Divides from black balls: ${blackCounter}`)
+
+}
