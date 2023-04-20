@@ -1,0 +1,18 @@
+function exam1(input){
+
+ let compName = input[0];
+ let numTicketsAd = Number (input[1]);
+ let numTicketsKd = Number (input[2]);
+ let priceTicketsAd = Number (input[3]);
+ let tax = Number (input[4]);
+
+ let priceTicketKd = priceTicketsAd * 0.30;
+ let adPriceTax = priceTicketsAd + tax
+ let kdPriceTax = priceTicketKd + tax
+
+ let totalPrice = (adPriceTax * numTicketsAd) + (kdPriceTax * numTicketsKd)
+ let profit = totalPrice * 0.20
+
+  console.log(`The profit of your agency from ${compName} tickets is ${profit.toFixed(2)} lv.`);
+
+}
