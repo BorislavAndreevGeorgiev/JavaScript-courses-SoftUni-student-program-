@@ -1,0 +1,31 @@
+function exam2(input){
+
+    let bagPrice = Number(input[0]);
+    let bagKG = Number (input[1]);
+    let daysLeft = Number (input[2]);
+    let numBags = Number (input[3]);
+
+    let priceWeight = 0
+    let daysPrice =0
+
+    if(bagKG < 10){
+        priceWeight = (bagPrice * numBags) * 0.20;
+    }else if(bagKG >= 10 && bagKG <= 20 ){
+        priceWeight = (bagPrice * numBags) * 0.50;
+    }else{
+        priceWeight = bagPrice * numBags
+    }
+
+    if(daysLeft < 7){
+        daysPrice = priceWeight * 0.40;
+    }else if(daysLeft >= 7 && daysLeft <= 30){
+        daysPrice = priceWeight * 0.15;
+    }else if(daysLeft > 30){
+        daysPrice = priceWeight * 0.10;
+    }
+
+    let totalPrice = priceWeight + daysPrice
+
+    console.log(`The total price of bags is: ${totalPrice.toFixed(2)} lv.`);
+
+}
