@@ -1,0 +1,42 @@
+function foodForPets(input){
+
+ let index = 0;
+ let days = Number(input[index]);
+ index++
+ let totalFood = Number (input[index]);
+ index++
+ let dogFood = Number(input[index]);
+ index++
+ let catFood = Number(input[index]);
+ index++
+
+let dogCounter = 0;
+let catCounter = 0;
+let dayCounter = 1;
+let supprice = 0;
+
+while(dayCounter <= days){
+        if(dayCounter % 3 == 0){
+            supprice +=(dogFood + catFood) * 0.1;
+        }
+    dogCounter += dogFood;
+    catCounter += catFood;
+    dogFood = Number(input[index]);
+    index++
+    catFood = Number(input[index]);
+    index++
+    dayCounter++
+
+    }
+
+let totalCounter = dogCounter + catCounter
+
+let totalCounterPercent = (totalCounter / totalFood) * 100 
+let dogPercent = ((dogCounter / totalCounter) * 100).toFixed(2)
+let catPercent = ((catCounter / totalCounter) * 100).toFixed(2)
+console.log(`Total eaten biscuits: ${Math.round(supprice)}gr.`);
+console.log(`${totalCounterPercent.toFixed(2)}% of the food has been eaten.`);
+console.log(`${dogPercent}% eaten from the dog.`);
+console.log(`${catPercent}% eaten from the cat.`);
+
+}
