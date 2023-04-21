@@ -1,0 +1,26 @@
+function careOfPuppy(input){
+
+let index = 0;
+let availableFood = Number(input[index]);
+index++
+let process = input[index];
+index++
+
+let foodInGr = availableFood * 1000;
+let consumedCounter = 0;
+
+while(process !== "Adopted"){
+    consumedCounter += Number(process)
+    process = input[index];
+    index++
+}
+
+if(consumedCounter <= foodInGr){
+    let result = foodInGr - consumedCounter;
+    console.log(`Food is enough! Leftovers: ${result} grams.`);
+}else{
+    let result = foodInGr - consumedCounter;
+    console.log(`Food is not enough. You need ${Math.abs(result)} grams more.`);
+}
+
+}
