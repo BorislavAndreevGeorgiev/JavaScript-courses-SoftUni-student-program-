@@ -1,0 +1,19 @@
+function changeBureau(input){
+
+ let coinsNum = Number (input[0]);
+ let chiMoney = Number (input[1]);
+ let tax = Number (input[2]);
+
+ let coinPrice = coinsNum * 1168;
+ let dolar = chiMoney * 0.15
+ let bgn = dolar * 1.76
+
+ let total =( coinPrice + bgn)
+ let totalEu = total / 1.95
+ let totalWithTax =  (totalEu * tax) / 100
+
+ let result = totalEu - totalWithTax 
+
+ console.log(result.toFixed(2))
+
+}
