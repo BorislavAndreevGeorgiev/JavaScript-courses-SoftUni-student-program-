@@ -1,0 +1,18 @@
+function catWalking(input){
+
+ let dailyMin = Number (input[0]);
+ let walkCount = Number (input[1]);
+ let canCalory = Number (input[2]);
+
+ let walkingSum = walkCount * dailyMin 
+ let caloryBurn = walkingSum * 5
+
+ let targetCalory = canCalory / 2;
+
+ if(caloryBurn >= targetCalory){
+    console.log(`Yes, the walk for your cat is enough. Burned calories per day: ${caloryBurn}.`);
+ }else{
+    console.log(`No, the walk for your cat is not enough. Burned calories per day: ${caloryBurn}.`);
+ }
+
+}
