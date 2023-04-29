@@ -1,0 +1,54 @@
+function test(input) {
+
+    let avMoney = Number (input[0]);
+    let gender = input[1];
+    let personAge = Number (input[2]);
+    let cardType = input[3];
+
+    let cardMoney = 0;
+    let discount = 0;
+
+    if( gender === "m"){
+        switch(cardType){
+            case 'Gym': cardMoney += 42
+            break;
+            case 'Boxing' : cardMoney += 41
+            break;
+            case 'Yoga' : cardMoney += 45
+            break;
+            case 'Zumba' : cardMoney += 34
+            break;
+            case 'Dances' : cardMoney += 51
+            break;
+            case 'Pilates' : cardMoney += 39
+            break;
+        }
+    }else if(gender === "f"){
+        switch(cardType){
+            case 'Gym': cardMoney += 35
+            break;
+            case 'Boxing' : cardMoney += 37
+            break;
+            case 'Yoga' : cardMoney += 42
+            break;
+            case 'Zumba' : cardMoney += 31
+            break;
+            case 'Dances' : cardMoney += 53
+            break;
+            case 'Pilates' : cardMoney += 37
+            break;
+        }
+        
+    }
+    if(personAge <= 19){
+        discount = cardMoney * 0.20
+        cardMoney = cardMoney - discount
+    }
+
+    if(avMoney >= cardMoney){
+        console.log(`You purchased a 1 month pass for ${cardType}.`);
+    }else{
+        console.log(`You don't have enough money! You need $${(cardMoney - avMoney).toFixed(2)} more.`);
+    }
+    
+}
